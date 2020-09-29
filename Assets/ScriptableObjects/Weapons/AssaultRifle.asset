@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AssaultRifle
   m_EditorClassIdentifier: 
   aName: Assault Rifle
-  maxAmmoInStock: 150
+  maxAmmoInStock: 175
   fullMagazine: 25
   reloadTime: 0
   fireRate: 10
@@ -24,3 +24,4 @@ MonoBehaviour:
   nonCollisionLayer:
     serializedVersion: 2
     m_Bits: 307
+  type: 1

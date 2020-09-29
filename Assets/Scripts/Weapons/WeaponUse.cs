@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class WeaponUse : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class WeaponUse : MonoBehaviour
     private float _fireRate;
     private float _nextTimeToFire = 0f;
     private AbstractWeapon _abstractWeapon;
-    // [SerializeField] private GameObject _weapon;
 
     public void Initialize(AbstractWeapon abstractWeapon, AssaultRifleAK weaponHolder)
     {

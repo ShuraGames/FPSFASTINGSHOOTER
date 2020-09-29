@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Hit
+public abstract class Hit: MonoBehaviour
 {
-    void Accept(IVisitor visiter, Vector3 pos);
+    public abstract void Accept(IVisitor visiter, Vector3 pos);
 }

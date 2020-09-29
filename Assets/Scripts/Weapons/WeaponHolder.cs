@@ -9,7 +9,6 @@ public class WeaponHolder : MonoBehaviour
 
     private int _selectedWeapon = 0; 
 
-
     private void Start() 
     {
         _use.Initialize(_template[0]._abstractWeapon, _template[0]._weapon);
