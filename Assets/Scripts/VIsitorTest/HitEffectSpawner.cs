@@ -10,11 +10,15 @@ class HitEffectSpawner : MonoBehaviour, IVisitor
 
     public void Visit(TargetHit hit, Vector3 pos, GameObject inst)
     {
-        var instObj = Instantiate(inst, pos, Quaternion.LookRotation(pos.normalized));
-        Destroy(instObj, 2f);
+        SpawnObject(pos, inst);
     }
 
     public void Visit(EnviromentHit hit, Vector3 pos, GameObject inst)
+    {
+        SpawnObject(pos, inst);
+    }
+
+    private void SpawnObject(Vector3 pos, GameObject inst)
     {
         var instObj = Instantiate(inst, pos, Quaternion.LookRotation(pos.normalized));
         Destroy(instObj, 2f);

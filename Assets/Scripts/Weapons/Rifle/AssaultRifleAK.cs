@@ -17,13 +17,14 @@ public class AssaultRifleAK : MonoBehaviour
 #endregion
 
     [HideInInspector] public GameObject _bulletRifle;
-    [HideInInspector] public GameObject _fightAction;
+    public GameObject _fightAction;
     [HideInInspector] public int maxAmmoInPack;
 
     [SerializeField] private Transform _pointInstanceBullet;
     [SerializeField] private Camera fpsCamera;
     [SerializeField] private TriggerWithPlayer _triggerWithPlayer;
 
+    [SerializeField] private bool _animationEndPlay;
     private WeaponAnimator _weaponAnimator;
 
     public static event Action<int, int, string> changeAmmo;
@@ -39,6 +40,7 @@ public class AssaultRifleAK : MonoBehaviour
 
     public void Initialize()
     {
+        _animationEndPlay = false;
         changeAmmo?.Invoke(currentAmmo, maxAmmo, ammoName);
 
         Debug.Log("Initialize from " + typeWeapon.ToString());
@@ -47,6 +49,9 @@ public class AssaultRifleAK : MonoBehaviour
 
     public void OnShoot()
     {
+        Debug.Log(_animationEndPlay);
+        if(!_animationEndPlay) return;
+
         if(currentAmmo <= 0)
         {
             ReloadWeapon();
@@ -77,12 +82,18 @@ public class AssaultRifleAK : MonoBehaviour
     {
         if(maxAmmo <= 0  || currentAmmo == maxAmmoInMagazine) return;
 
+        _animationEndPlay = false;
+        _weaponAnimator.TriggerWithWeapon("Reload");
         maxAmmo -= maxAmmoInMagazine;
         currentAmmo = maxAmmoInMagazine;
-        changeAmmo?.Invoke(currentAmmo, maxAmmo, ammoName);
     }
 
 #endregion
+
+    public void UpdateUIAmmo()
+    {
+        changeAmmo?.Invoke(currentAmmo, maxAmmo, ammoName);
+    }
 
     public void ChangeAmmo(int ammo)
     {
@@ -91,4 +102,10 @@ public class AssaultRifleAK : MonoBehaviour
         if(gameObject.activeSelf)
             changeAmmo?.Invoke(currentAmmo, maxAmmo, ammoName);
     }   
+
+    public void AnimationEndPlayed()
+    {
+        _animationEndPlay = true;
+        Debug.Log(_animationEndPlay);
+    }
 }

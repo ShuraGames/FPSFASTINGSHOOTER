@@ -4,8 +4,10 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - _effectGunHit: {instanceID: 0}
-  - _effectRifleHit: {instanceID: 0}
+  - _effectGunHit: {fileID: 5034936712139301504, guid: 1a365b5c2885a494289cf61843788c01,
+      type: 3}
+  - _effectRifleHit: {fileID: 3224939306891162902, guid: 3922d66bca01e314bad8886229482f40,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

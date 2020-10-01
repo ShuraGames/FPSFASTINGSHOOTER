@@ -28,6 +28,10 @@ public class WeaponHolder : MonoBehaviour
         {
             _selectedWeapon = 1;
         }
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            _selectedWeapon = 2;
+        }
 
         if(previousSelectedWeapon != _selectedWeapon)
             SelectWeapon();

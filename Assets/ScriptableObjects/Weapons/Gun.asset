@@ -16,7 +16,7 @@ MonoBehaviour:
   maxAmmoInStock: 100
   fullMagazine: 10
   reloadTime: 0
-  fireRate: 5
+  fireRate: 3
   weaponDamage: 1
   weaponDistance: 100
   bulletWeapon: {fileID: 2995460340434958487, guid: 54626e3344ced1c49a27310823b69ce8,

@@ -5,7 +5,7 @@ using UnityEngine;
 public class StandartBullet : MonoBehaviour, IBullets
 {
     public int BulletDamage { get; } = 5;
-    public float BulletSpeed { get; set; } = 10f;
+    public float BulletSpeed { get; set; } = 15f;
 
     [HideInInspector] public Vector3 targetPosition = Vector3.zero;
 

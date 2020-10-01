@@ -21,6 +21,15 @@ public class WeaponAnimator : MonoBehaviour
         {
             BoolWithWeapon("Walk", false);
         }
+
+        if(Input.GetMouseButton(1))
+        {
+            BoolWithWeapon("Aim", true);
+        }
+        else
+        {
+            BoolWithWeapon("Aim", false);
+        }
     }
 
     public void BoolWithWeapon(string animationName,  bool chek)
@@ -31,6 +40,11 @@ public class WeaponAnimator : MonoBehaviour
     public void TriggerWithWeapon(string animationName)
     {
         _animator.SetTrigger(animationName);
+    }
+
+    public void ResetTriggerWithWeapon(string animationName)
+    {
+        _animator.ResetTrigger(animationName);
     }
 
 }
